@@ -41,6 +41,32 @@ export class UserRegistrationService {
   }
   }
 
+// User Login (public service)
+export class UserLoginService {
+  constructor(private http: HttpClient) { }
+
+public userLogin(userDetails: any): Observable<any> {
+  console.log(userDetails);
+  return this.http.post(apiUrl + 'login', userDetails)
+  .pipe(
+    catchError(this.handleError)
+  );
+  }
+
+private handleError(error: HttpErrorResponse): any {
+  if (error.error instanceof ErrorEvent) {
+    console.error('Some Error occured: ' + error.error.message);
+  } else {
+    console.error(
+      `Error Status code ${error.status}, ` + 
+      `Error body is: ${error.error}`);
+  }
+  return throwError(
+    'Could not complete login process, please try again later'
+  )
+}
+} 
+
 
 // Get All Movies (private service)
 export class GetAllMoviesService {

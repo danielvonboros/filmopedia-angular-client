@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
+import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 
 // Angular visual modules
 import { FormsModule } from '@angular/forms';
@@ -19,7 +20,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 
 
 
@@ -27,7 +27,7 @@ import { UserLoginFormComponent } from './user-login-form/user-login-form.compon
   declarations: [
     AppComponent,
     UserRegistrationFormComponent,
-    UserLoginFormComponent
+    UserLoginFormComponent,
   ],
   imports: [
     BrowserModule,

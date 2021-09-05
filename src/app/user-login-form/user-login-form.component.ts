@@ -2,11 +2,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 // custom components
-import { UserLoginService } from '../fetch-api-data.service';
+import { FetchDataApiService } from '../fetch-api-data.service';
 
 // Material components
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-user-login-form',
@@ -15,26 +16,25 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserLoginFormComponent implements OnInit {
 
-  @Input() userData= {username:'', password:''}
+  @Input() userData= { username: '', password: '' }
 
   constructor(
-    public fetchApiData: UserLoginService,
+    public fetchApiData: FetchDataApiService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar
-  ) { }
+    ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   // function for sending the form inputs to the backend
   loginUser(): void {
-    this.fetchApiData.userLogin(this.userData).subscribe((result) => {
+    this.fetchApiData.userLogin(this.userData).subscribe(() => {
       this.dialogRef.close();
-      this.snackBar.open(result, 'OK', {
+      this.snackBar.open('Login successful', 'OK', {
         duration: 2000
       });
-    }, (result) => {
-      this.snackBar.open(result, 'OK', {
+    }, (response) => {
+      this.snackBar.open(response, 'OK', {
         duration: 2000
       })
     })

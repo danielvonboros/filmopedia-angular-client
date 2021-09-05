@@ -14,6 +14,8 @@ const username = localStorage.getItem('user');
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class UserRegistrationService {
   // Inject the HttpClient module to the constructor params
   constructor(private http: HttpClient) {
@@ -39,7 +41,7 @@ export class UserRegistrationService {
       'Could complete the registration process, Please try again later'
     );
   }
-  }
+}
 
 // User Login (public service)
 export class UserLoginService {
@@ -412,12 +414,4 @@ export class GetGenreByNameService {
   }
   }
 
-  
 
-
-
-
-export class FetchApiDataService {
-
-  constructor() { }
-}

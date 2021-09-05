@@ -19,7 +19,7 @@ export class AppComponent {
   constructor(public dialog: MatDialog) { }
   // the function that will be opened once the signup button is clicked
   openUserRegistrationDialog(): void {
-    this.openUserRegistrationDialog.open(UserRegistrationFormComponent, {
+    this.dialog.open(UserRegistrationFormComponent, {
       // Assigning a width to the dialog
       width: '280px'
     });

@@ -2,7 +2,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 // components
-import { FetchApiDataService } from '../fetch-api-data.service';
+import { UserRegistrationService } from '../fetch-api-data.service';
 
 // Material modules
 import { MatDialogRef } from '@angular/material/dialog';
@@ -19,24 +19,24 @@ export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = { username: '', password: '', email: '', birthday: ''};
 
   constructor(
-    public fetchApiData: FetchApiDataService,
+    public fetchApiData: UserRegistrationService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
     public snackBar: MatSnackBar
-  ) { }
+  ) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   // function responsible for sending form inputs to backend
   registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
+    this.fetchApiData.userRegistration(this.userData).subscribe(() => {
       // Logic for successful user registration needs to be implemented here!
       this.dialogRef.close(); // will close the modal on success
-      this.snackBar.open(result, 'OK', {
-        duration: 2000
+      this.snackBar.open('Welcome, you are now registered. You can now go to login', 'OK', {
+        duration: 3000
       });
-    }, (result) => {
-      this.snackBar.open(result, 'OK', {
-        duration: 2000
+    }, (response) => {
+      this.snackBar.open(response, 'OK', {
+        duration: 3000
       });
     });
   }

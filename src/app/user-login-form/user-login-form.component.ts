@@ -1,5 +1,6 @@
 // Core modules
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 // custom components
 import { FetchDataApiService } from '../fetch-api-data.service';
@@ -17,6 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UserLoginFormComponent implements OnInit {
 
   @Input() userData= { username: '', password: '' }
+  router: any;
 
   constructor(
     public fetchApiData: FetchDataApiService,
@@ -30,9 +32,11 @@ export class UserLoginFormComponent implements OnInit {
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe(() => {
       this.dialogRef.close();
+      this.router.navigate(['movies']);
       this.snackBar.open('Login successful', 'OK', {
         duration: 2000
       });
+      
     }, (response) => {
       this.snackBar.open(response, 'OK', {
         duration: 2000

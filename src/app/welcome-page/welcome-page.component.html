@@ -1,1 +1,28 @@
-<p>welcome-page works!</p>
+
+<div class='main-page'>
+    <h1>
+      Welcome to filmOpedia!
+    </h1>
+    <button
+      mat-raised-button
+      (click)='openUserRegistrationDialog()'
+      style='margin-right: 10px'
+      color='primary'
+    >
+    Sign up
+    </button>
+    <button
+      mat-raised-button
+      (click)='openUserLoginDialog()'
+      color='primary'
+    >
+    Login
+    </button>
+    <button
+      mat-raised-button
+      (click)='openMoviesDialog()'
+      color='primary'
+    >
+    All movies
+    </button>
+  </div>

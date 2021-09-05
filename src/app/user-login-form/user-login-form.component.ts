@@ -18,10 +18,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UserLoginFormComponent implements OnInit {
 
   @Input() userData= { username: '', password: '' }
-  router: any;
 
   constructor(
     public fetchApiData: FetchDataApiService,
+    public router: Router,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar
     ) { }
@@ -34,12 +34,12 @@ export class UserLoginFormComponent implements OnInit {
       this.dialogRef.close();
       this.router.navigate(['movies']);
       this.snackBar.open('Login successful', 'OK', {
-        duration: 2000
+        duration: 10000
       });
       
     }, (response) => {
       this.snackBar.open(response, 'OK', {
-        duration: 2000
+        duration: 10000
       })
     })
   }

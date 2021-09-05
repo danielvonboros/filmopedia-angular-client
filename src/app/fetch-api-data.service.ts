@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/internal/operators';
 import { map } from 'rxjs/operators';
-import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 
 const apiUrl = 'https://filmopedia.herokuapp.com/';
 // Get token from local storage for requests

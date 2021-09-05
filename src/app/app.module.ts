@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 
 
@@ -30,6 +31,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
+    WelcomePageComponent,
   ],
   imports: [
     BrowserModule,

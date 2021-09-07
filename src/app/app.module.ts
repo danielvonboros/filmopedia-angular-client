@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 // Angular visual modules
 import { FormsModule } from '@angular/forms';
@@ -25,11 +26,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'users', component: ProfileViewComponent },
+  { path: 'favorites', component: FavoritesComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix'},
 ];
 
@@ -43,6 +47,7 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     ProfileViewComponent,
     NavbarComponent,
+    FavoritesComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -58,6 +63,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

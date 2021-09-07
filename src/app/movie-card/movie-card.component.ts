@@ -1,8 +1,11 @@
 // core modules
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 // custom modules
 import { FetchDataApiService } from '../fetch-api-data.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -11,7 +14,11 @@ import { FetchDataApiService } from '../fetch-api-data.service';
 })
 export class MovieCardComponent {
   movies: any[] = [];
-  constructor(public fetchApiData: FetchDataApiService) { }
+  constructor(
+    public fetchApiData: FetchDataApiService,
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar,
+    ) { }
 
   ngOnInit(): void {
     this.getMovies();

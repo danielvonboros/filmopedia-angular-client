@@ -9,6 +9,7 @@ import { FetchDataApiService } from '../fetch-api-data.service';
 // material modules
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { MatCard } from '@angular/material/card';
 
 @Component({
   selector: 'app-profile-view',

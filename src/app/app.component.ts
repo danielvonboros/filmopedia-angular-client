@@ -18,26 +18,4 @@ import { MatDialog } from '@angular/material/dialog';
 export class AppComponent {
   title = 'filmopedia-Angular-client';
 
-  // constructor(public dialog: MatDialog) { }
-  
-  // // the function that will be opened once the signup button is clicked
-  // openUserRegistrationDialog(): void {
-  //   this.dialog.open(UserRegistrationFormComponent, {
-  //     // Assigning a width to the dialog
-  //     width: '280px'
-  //   });
-  // };
-
-  // openUserLoginDialog(): void {
-  //   this.dialog.open(UserLoginFormComponent, {
-  //     width: '280px'
-  //   });
-  // };
-
-  // openMoviesDialog(): void {
-  //   this.dialog.open(MovieCardComponent, {
-  //     width: '500px'
-  //   });
-  // }
-
 }

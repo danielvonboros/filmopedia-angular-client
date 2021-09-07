@@ -1,22 +1,30 @@
+// core modules
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+// rxjs modules
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/internal/operators';
 import { map } from 'rxjs/operators';
 
+// global variables
 const apiUrl = 'https://filmopedia.herokuapp.com/';
 // Get token from local storage for requests
 const token = localStorage.getItem('token');
+console.log(token);
 // Get username from localStorage for URLs
 const username = localStorage.getItem('user');
+console.log(username);
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class FetchDataApiService {
+
   // Inject the HttpClient module to the constructor params
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient, private router:Router) {}
 
 
   // User Registration (public service)
@@ -42,9 +50,10 @@ export class FetchDataApiService {
 
 // Get All Movies (private service)
   getAllMovies(): Observable<any> {
+    const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {headers: new HttpHeaders(
       {
-        Authorization: 'Bearer ' + token,
+        Authorization: `Bearer ${token}`,
       })}).pipe(
         map(this.extractResponseData),
         catchError(this.handleError)
@@ -91,7 +100,7 @@ export class FetchDataApiService {
   
 
 // Get a User by username (private service)
-  getUser(): Observable<any> {
+  getUser(username:any): Observable<any> {
     return this.http.get(apiUrl + `users/${username}`, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
@@ -173,8 +182,8 @@ export class FetchDataApiService {
   } 
 
   // extract Response Data
-  private extractResponseData(res: Response|Object): any {
-    const body = res;
+  private extractResponseData(response: Response|Object): any {
+    const body = response;
     return body || {};
   }
 

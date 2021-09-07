@@ -24,6 +24,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 const appRoutes: Routes = [
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     ProfileViewComponent,
+    NavbarComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

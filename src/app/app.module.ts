@@ -27,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { GenreCardComponent } from './genre-card/genre-card.component';
 
 
 const appRoutes: Routes = [
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     ProfileViewComponent,
     NavbarComponent,
     FavoritesComponent,
+    GenreCardComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

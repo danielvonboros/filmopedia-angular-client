@@ -48,13 +48,14 @@ export class FavoritesComponent implements OnInit {
       // this.isLoading: false
       this.movies = resp;
       console.log(this.movies);
+      return this.filterFavorites();
     })
   }
 
   getUsersFavs(): void {
     this.fetchApiData.getUser(user).subscribe((resp:any) => {
       this.favs = resp.favoritemovies;
-      console.log(this.favs);
+      console.log(this.favs, 'favs');
       return this.favs;
     })
   }
@@ -63,13 +64,13 @@ export class FavoritesComponent implements OnInit {
     this.movies.forEach((movie:any) => {
       if (this.favs.includes(movie._id)) {
         this.favorites.push(movie);
-      } console.log(this.favorites);
+      } console.log(this.favorites, 'favorites');
     });
     return this.favorites;
   }
 
-  addToUserFavorites(_id:string, title:string): void {
-    this.fetchApiData.addToFavoriteMovies(_id).subscribe((resp: any) => {
+  addToUserFavorites(id:string, title:string): void {
+    this.fetchApiData.addToFavoriteMovies(id).subscribe((resp: any) => {
       this.snackBar.open(`${title} has been added to your favorites.`, 'OK', {
         duration: 3000,
       });
@@ -77,8 +78,8 @@ export class FavoritesComponent implements OnInit {
     })
   }
 
-  removeFromUserFavorites(_id:string, title:string): void {
-    this.fetchApiData.removeFromFavoriteMovies(_id).subscribe((resp: any) => {
+  removeFromUserFavorites(id:string, title:string): void {
+    this.fetchApiData.removeFromFavoriteMovies(id).subscribe((resp: any) => {
       this.snackBar.open(`${title} has been removed from your favorites.`, 'OK', {
         duration: 3000,
       })

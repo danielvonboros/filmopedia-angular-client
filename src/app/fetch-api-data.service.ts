@@ -127,7 +127,7 @@ export class FetchDataApiService {
 
 
   // Add a movie to the favoritemovies-array (private service)
-  addToFavoriteMovies(): Observable<any> {
+  addToFavoriteMovies(_id:string): Observable<any> {
     return this.http.post(apiUrl + `users/${username}/favoritemovies/:movieId`,
     {headers: new HttpHeaders(
       {
@@ -169,7 +169,7 @@ export class FetchDataApiService {
 
 
   // Remove a movie from the favoritemovies-array (private service)
-  removeFromFavoriteMovies(): Observable<any> {
+  removeFromFavoriteMovies(_id:string): Observable<any> {
     return this.http.delete(apiUrl + `users/${username}/favoritemovies/:movieId`,
     {headers: new HttpHeaders(
       {

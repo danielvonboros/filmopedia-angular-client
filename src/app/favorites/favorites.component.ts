@@ -68,8 +68,8 @@ export class FavoritesComponent implements OnInit {
     return this.favorites;
   }
 
-  addToUserFavorites(id:string, title:string): void {
-    this.fetchApiData.addToFavoriteMovies(id).subscribe((resp: any) => {
+  addToUserFavorites(_id:string, title:string): void {
+    this.fetchApiData.addToFavoriteMovies(_id).subscribe((resp: any) => {
       this.snackBar.open(`${title} has been added to your favorites.`, 'OK', {
         duration: 3000,
       });
@@ -77,8 +77,8 @@ export class FavoritesComponent implements OnInit {
     })
   }
 
-  removeFromUserFavorites(id:string, title:string): void {
-    this.fetchApiData.removeFromFavoriteMovies(id).subscribe((resp: any) => {
+  removeFromUserFavorites(_id:string, title:string): void {
+    this.fetchApiData.removeFromFavoriteMovies(_id).subscribe((resp: any) => {
       this.snackBar.open(`${title} has been removed from your favorites.`, 'OK', {
         duration: 3000,
       })

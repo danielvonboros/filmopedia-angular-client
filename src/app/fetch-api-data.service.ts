@@ -127,7 +127,7 @@ export class FetchDataApiService {
 
 
   // Add a movie to the favoritemovies-array (private service)
-  PostToFavoriteMovies(): Observable<any> {
+  addToFavoriteMovies(): Observable<any> {
     return this.http.post(apiUrl + `users/${username}/favoritemovies/:movieId`,
     {headers: new HttpHeaders(
       {
@@ -141,7 +141,7 @@ export class FetchDataApiService {
 
 
   // Edit user profile (private service)
-  EditUserProfile(): Observable<any> {
+  editUserProfile(): Observable<any> {
     return this.http.put(apiUrl + `users/${username}`,
     {headers: new HttpHeaders(
       {
@@ -155,7 +155,7 @@ export class FetchDataApiService {
   
 
   //Delete user profile (private service)
-    DeleteUserProfile(): Observable<any> {
+    deleteUserProfile(): Observable<any> {
       return this.http.delete(apiUrl + `users/${username}`,
       {headers: new HttpHeaders(
         {
@@ -169,7 +169,7 @@ export class FetchDataApiService {
 
 
   // Remove a movie from the favoritemovies-array (private service)
-  RemoveFromFavoriteMovies(): Observable<any> {
+  removeFromFavoriteMovies(): Observable<any> {
     return this.http.delete(apiUrl + `users/${username}/favoritemovies/:movieId`,
     {headers: new HttpHeaders(
       {

@@ -26,7 +26,7 @@ export class FavoritesComponent implements OnInit {
   // isLoading: false;
   user: any = {};
   favorites: any = [];
-  movies: any = [];
+  movies: any[] = [];
   favs: any[] = [];
 
   constructor(
@@ -112,6 +112,14 @@ export class FavoritesComponent implements OnInit {
       data: {title, imageUrl, description, year},
       width: '500px'
     });
+  }
+
+  setFavStatus(id: any): any {
+    if (this.favs.includes(id)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

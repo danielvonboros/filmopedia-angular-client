@@ -1,1 +1,12 @@
-<p>synopsis-card works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-subtitle>Synopsis</mat-card-subtitle>
+        <mat-card-title>{{data.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <img src={{data.imageUrl}} />
+        <p> </p>
+        <p>"{{data.description}}"</p>
+        <p>{{data.year}}</p>
+    </mat-card-content>
+</mat-card>

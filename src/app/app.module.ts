@@ -14,6 +14,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { GenreCardComponent } from './genre-card/genre-card.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { DirectorCardComponent } from './director-card/director-card.component';
+import { SynopsisCardComponent } from './synopsis-card/synopsis-card.component';
 
 // Angular visual modules
 import { FormsModule } from '@angular/forms';
@@ -28,8 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { DirectorCardComponent } from './director-card/director-card.component';
-import { SynopsisCardComponent } from './synopsis-card/synopsis-card.component';
+
 
 
 

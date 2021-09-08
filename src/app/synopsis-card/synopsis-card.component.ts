@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+// core modules
+import { Component, Inject, Input, OnInit } from '@angular/core';
+
+// custom components
+
+// material modules
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-synopsis-card',
@@ -7,7 +13,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SynopsisCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      title:string,
+      imageUrl:any,
+      description:string,
+      year: number,
+    }
+
+  ) { }
 
   ngOnInit(): void {
   }

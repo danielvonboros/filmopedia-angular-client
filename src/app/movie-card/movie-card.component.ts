@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FetchDataApiService } from '../fetch-api-data.service';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { GenreCardComponent } from '../genre-card/genre-card.component';
+import { DirectorCardComponent } from '../director-card/director-card.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -36,6 +37,13 @@ export class MovieCardComponent {
   openGenre(name:string, description:string): void {
     this.dialog.open(GenreCardComponent, {
       data: {name, description},
+      width: '500px'
+    });
+  }
+
+  openDirector(name:string, bio:string, birthYear:number, deathYear:number): void {
+    this.dialog.open(DirectorCardComponent, {
+      data: {name, bio, birthYear, deathYear},
       width: '500px'
     });
   }

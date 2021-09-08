@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+// core modules
+import { Component, Inject, Input, OnInit } from '@angular/core';
+
+// custom components
+
+// material modules
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-director-card',
@@ -7,7 +13,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectorCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      name:string,
+      bio:string,
+      birthYear:number,
+      deathYear:number,
+    }
+
+  ) { }
 
   ngOnInit(): void {
   }

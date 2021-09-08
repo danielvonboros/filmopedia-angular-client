@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 // custom components
 import { FetchDataApiService } from '../fetch-api-data.service';
 import { GenreCardComponent } from '../genre-card/genre-card.component';
+import { DirectorCardComponent } from '../director-card/director-card.component';
   // import MovieGenre / MovieDirector / MovieSynopsis
 
 // material modules
@@ -94,6 +95,13 @@ export class FavoritesComponent implements OnInit {
   openGenre(name:string, description:string): void {
     this.dialog.open(GenreCardComponent, {
       data: {name, description},
+      width: '500px'
+    });
+  }
+
+  openDirector(name:string, bio:string, birthYear:number, deathYear:number): void {
+    this.dialog.open(DirectorCardComponent, {
+      data: {name, bio, birthYear, deathYear},
       width: '500px'
     });
   }

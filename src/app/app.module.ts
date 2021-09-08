@@ -28,6 +28,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { DirectorCardComponent } from './director-card/director-card.component';
 
 
 
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     FavoritesComponent,
     GenreCardComponent,
+    DirectorCardComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

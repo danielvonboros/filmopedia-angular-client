@@ -1,14 +1,19 @@
 <mat-card>
     <mat-card-header>
-        <mat-card-title>Hello there, {{user.username}}</mat-card-title>
         <mat-card-subtitle>
+            Edit Profile
+        </mat-card-subtitle>
             <button
+                class="float-right"
                 mat-raised-button
                 color='primary'
+                (click)="openEditProfileDialog()"
             >
                 Edit
             </button>
-        </mat-card-subtitle>
+        
+        <mat-card-title>Hello there, {{user.username}}</mat-card-title>
+        
     </mat-card-header>
     <mat-card-content>
         <p>Email: {{user.email}}</p>

@@ -30,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 
 
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
     GenreCardComponent,
     DirectorCardComponent,
     SynopsisCardComponent,
+    ProfileEditComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

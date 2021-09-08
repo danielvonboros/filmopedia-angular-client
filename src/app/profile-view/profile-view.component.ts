@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 // custom components
 // import {} from '';
 import { FetchDataApiService } from '../fetch-api-data.service';
+import { ProfileEditComponent } from '../profile-edit/profile-edit.component';
 
 // material modules
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -37,6 +38,12 @@ export class ProfileViewComponent implements OnInit {
     this.fetchApiData.getUser(user).subscribe((res: any) => {
       this.user = res;
     });
+  }
+
+  openEditProfileDialog(): void{
+    this.dialog.open(ProfileEditComponent, {
+      width: '500px'
+    })
   }
 
 

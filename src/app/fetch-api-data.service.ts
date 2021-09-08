@@ -146,7 +146,7 @@ export class FetchDataApiService {
 
 
   // Edit user profile (private service)
-  editUserProfile(): Observable<any> {
+  editUserProfile(userData:any): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
     return this.http.put(apiUrl + `users/${username}`,

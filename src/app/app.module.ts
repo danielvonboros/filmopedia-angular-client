@@ -29,6 +29,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DirectorCardComponent } from './director-card/director-card.component';
+import { SynopsisCardComponent } from './synopsis-card/synopsis-card.component';
 
 
 
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
     FavoritesComponent,
     GenreCardComponent,
     DirectorCardComponent,
+    SynopsisCardComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

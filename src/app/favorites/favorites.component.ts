@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 // custom components
 import { FetchDataApiService } from '../fetch-api-data.service';
-// import MovieGenre / MovieDirector / MovieSynopsis
+import { GenreCardComponent } from '../genre-card/genre-card.component';
+  // import MovieGenre / MovieDirector / MovieSynopsis
 
 // material modules
 import { MatDialog } from '@angular/material/dialog';
@@ -16,13 +17,14 @@ const user = localStorage.getItem('username');
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.css']
+  
 })
 
 export class FavoritesComponent implements OnInit {
   // isLoading: false;
   user: any = {};
   favorites: any = [];
-  movies: any[] = [];
+  movies: any = [];
   favs: any[] = [];
 
   constructor(
@@ -87,6 +89,13 @@ export class FavoritesComponent implements OnInit {
         window.location.reload()}, 3000);
     });
     return this.getUsersFavs();
+  }
+
+  openGenre(name:string, description:string): void {
+    this.dialog.open(GenreCardComponent, {
+      data: {name, description},
+      width: '500px'
+    });
   }
 
 }

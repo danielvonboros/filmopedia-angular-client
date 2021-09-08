@@ -11,6 +11,9 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { GenreCardComponent } from './genre-card/genre-card.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
 
 // Angular visual modules
 import { FormsModule } from '@angular/forms';
@@ -24,10 +27,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
-import { ProfileViewComponent } from './profile-view/profile-view.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { GenreCardComponent } from './genre-card/genre-card.component';
+
 
 
 const appRoutes: Routes = [

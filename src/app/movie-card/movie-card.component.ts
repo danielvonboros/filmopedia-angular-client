@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 // custom modules
 import { FetchDataApiService } from '../fetch-api-data.service';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { GenreCardComponent } from '../genre-card/genre-card.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -13,7 +14,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrls: ['./movie-card.component.css']
 })
 export class MovieCardComponent {
-  movies: any[] = [];
+  movies: any = [];
   constructor(
     public fetchApiData: FetchDataApiService,
     public dialog: MatDialog,
@@ -29,6 +30,13 @@ export class MovieCardComponent {
       this.movies = resp;
       console.log(this.movies);
       return this.movies;
+    });
+  }
+
+  openGenre(name:string, description:string): void {
+    this.dialog.open(GenreCardComponent, {
+      data: {name, description},
+      width: '500px'
     });
   }
 

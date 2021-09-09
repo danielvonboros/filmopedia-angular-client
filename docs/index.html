@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>filmopedia-angular-client</title>
+	<meta name="description" content="Documentation for filmopedia-angular-client">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">filmopedia-angular-client</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>filmopedia-angular-client</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><img src="https://github.com/danielvonboros/filmopedia-angular-client/blob/master/src/assets/filmOpediaAngularLogo.png?raw=true" alt="alt filmOpediaAngularLogo"></p>
+				<p>The Angular client to: Not just another internet movie database</p>
+				<hr>
+				<p>Angular frontend application for <a href="https://github.com/danielvonboros/filmOpedia">filmopedia API</a></p>
+				<p>Client side single page application</p>
+				<a href="#description" id="description" style="color: inherit; text-decoration: none;">
+					<h3>Description</h3>
+				</a>
+				<p>Internet movie database that allows registered users to browse movies by Title, Genre, Director.
+				Users can change their username, email adress and birthday. While browsing the movies collection, users can add movies to their list of favorites.</p>
+				<a href="#tools-used" id="tools-used" style="color: inherit; text-decoration: none;">
+					<h3>Tools used</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Property</th>
+							<th>Tool</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Language</td>
+							<td>TypeScript</td>
+						</tr>
+						<tr>
+							<td>Library</td>
+							<td>Angular</td>
+						</tr>
+						<tr>
+							<td>Library</td>
+							<td>RxJS</td>
+						</tr>
+						<tr>
+							<td>Route handling</td>
+							<td>Angular</td>
+						</tr>
+						<tr>
+							<td>Styling Framework</td>
+							<td>Angular Material</td>
+						</tr>
+				</tbody></table>
+				<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
+					<h3>Dependencies</h3>
+				</a>
+				<ul>
+					<li>angular</li>
+					<li>rxjs</li>
+					<li>tslib</li>
+					<li>parcel-bundler</li>
+					<li>prop-types</li>
+					<li>react-dom</li>
+					<li>react-router-dom</li>
+					<li>babel</li>
+				</ul>
+				<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 12.2.4.</p>
+				<a href="#user-stories" id="user-stories" style="color: inherit; text-decoration: none;">
+					<h3>User Stories</h3>
+				</a>
+				<ul>
+					<li>As a user, I want to be able to access information on movies, directors, and genres so that I
+					can learn more about movies I’ve watched or am interested in.</li>
+					<li>As a user, I want to be able to create a profile so I can save data about my favorite movies</li>
+				</ul>
+				<a href="#application-functions" id="application-functions" style="color: inherit; text-decoration: none;">
+					<h3>Application functions</h3>
+				</a>
+				<p>The Filmopedia Application provides a collection of movies, that can be viewed by registered users. User data is also stored in a collection and API calls are made</p>
+				<a href="#setting-up-the-tools" id="setting-up-the-tools" style="color: inherit; text-decoration: none;">
+					<h3>Setting up the tools:</h3>
+				</a>
+				<p>First up, make sure you have Angular CLI installed globally. Angular CLI is the command line tool that is used to create the application, its components and make it accessible in your browser.</p>
+				<p>Do this by typing</p>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> --</span><span style="color: #001080">global</span><span style="color: #000000"> @</span><span style="color: #001080">angular</span><span style="color: #000000">/</span><span style="color: #001080">cli</span><span style="color: #000000">@</span><span style="color: #001080">latest</span>
+</code></pre>
+				<p>in your terminal</p>
+				<p>You can now download the repo to your computer, install the necessary modules by running:</p>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span>
+</code></pre>
+				<p>Make sure there were no errors installing the necessary modules to your application.</p>
+				<a href="#start-the-application" id="start-the-application" style="color: inherit; text-decoration: none;">
+					<h3>Start the application</h3>
+				</a>
+				<p>Now start the development server by typing</p>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">ng</span><span style="color: #000000"> </span><span style="color: #001080">serve</span>
+</code></pre>
+				<p>The console shows you the port on which the application is rendered. If your browser, doesn&#39;t open automatically, open it manually and navigate to the URL given in the terminal, in most cases: <a href="http://localhost:4200">http://localhost:4200</a>.
+				The app will automatically reload if you change any of the source files.</p>
+				<a href="#building-additional-components" id="building-additional-components" style="color: inherit; text-decoration: none;">
+					<h3>Building additional components</h3>
+				</a>
+				<p>To build a component, run</p>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">ng</span><span style="color: #000000"> </span><span style="color: #001080">generate</span><span style="color: #000000"> </span><span style="color: #001080">component</span><span style="color: #000000"> &lt;</span><span style="color: #001080">name</span><span style="color: #000000"> </span><span style="color: #0000FF">of</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">component</span><span style="color: #000000"> </span><span style="color: #001080">to</span><span style="color: #000000"> </span><span style="color: #001080">create</span><span style="color: #000000">&gt;</span>
+</code></pre>
+				<a href="#build-the-project" id="build-the-project" style="color: inherit; text-decoration: none;">
+					<h3>Build the project</h3>
+				</a>
+				<p>Type</p>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">ng</span><span style="color: #000000"> </span><span style="color: #001080">build</span>
+</code></pre>
+				<p>in the console to build the project. The build files will be stored in the /dist directory.</p>
+				<a href="#unit-tests" id="unit-tests" style="color: inherit; text-decoration: none;">
+					<h3>Unit Tests</h3>
+				</a>
+				<p>To run unit-tests with <a href="https://karma-runner.github.io">Karma</a>, type</p>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">ng</span><span style="color: #000000"> </span><span style="color: #001080">test</span>
+</code></pre>
+				<p>into the console.</p>
+				<a href="#end-to-end-tests" id="end-to-end-tests" style="color: inherit; text-decoration: none;">
+					<h3>End-to-end tests</h3>
+				</a>
+				<p>End to end tests can be started by typing</p>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> </span><span style="color: #001080">e2e</span>
+</code></pre>
+				<p>in the console.</p>
+				<a href="#additional-help" id="additional-help" style="color: inherit; text-decoration: none;">
+					<h3>Additional help</h3>
+				</a>
+				<p>To get more help on the Angular CLI use</p>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">ng</span><span style="color: #000000"> </span><span style="color: #001080">help</span>
+</code></pre>
+				<p>or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+				<a href="#app-structure" id="app-structure" style="color: inherit; text-decoration: none;">
+					<h3>App structure</h3>
+				</a>
+				<pre><code><span style="color: #000000">    </span><span style="color: #001080">filmOpedia</span><span style="color: #000000">-</span><span style="color: #001080">angular</span><span style="color: #000000">-</span><span style="color: #001080">client</span>
+
+<span style="color: #000000">    </span><span style="color: #001080">App</span>
+<span style="color: #000000">    |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">welcome</span><span style="color: #000000">-</span><span style="color: #001080">page</span>
+<span style="color: #000000">        |</span>
+<span style="color: #000000">        |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">user</span><span style="color: #000000">-</span><span style="color: #001080">registration</span><span style="color: #000000">-</span><span style="color: #001080">form</span>
+<span style="color: #000000">        |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">user</span><span style="color: #000000">-</span><span style="color: #001080">login</span><span style="color: #000000">-</span><span style="color: #001080">form</span>
+<span style="color: #000000">            |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">navbar</span>
+<span style="color: #000000">                |</span>
+<span style="color: #000000">                |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">movie</span><span style="color: #000000">-</span><span style="color: #001080">card</span>
+<span style="color: #000000">                |   |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">synopsis</span><span style="color: #000000">-</span><span style="color: #001080">card</span>
+<span style="color: #000000">                |   |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">genre</span><span style="color: #000000">-</span><span style="color: #001080">card</span>
+<span style="color: #000000">                |   |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">director</span><span style="color: #000000">-</span><span style="color: #001080">card</span>
+<span style="color: #000000">                |</span>
+<span style="color: #000000">                |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">favorites</span>
+<span style="color: #000000">                |   |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">synopsis</span><span style="color: #000000">-</span><span style="color: #001080">card</span>
+<span style="color: #000000">                |   |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">genre</span><span style="color: #000000">-</span><span style="color: #001080">card</span>
+<span style="color: #000000">                |   |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">director</span><span style="color: #000000">-</span><span style="color: #001080">card</span><span style="color: #000000">|</span>
+<span style="color: #000000">                |</span>
+<span style="color: #000000">                |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">profile</span><span style="color: #000000">-</span><span style="color: #001080">view</span>
+<span style="color: #000000">                    |</span><span style="color: #001080">_</span><span style="color: #000000">  </span><span style="color: #001080">profile</span><span style="color: #000000">-</span><span style="color: #001080">edit</span>
+
+</code></pre>
+				<a href="#essential-features-of-the-components" id="essential-features-of-the-components" style="color: inherit; text-decoration: none;">
+					<h4>Essential features of the Components</h4>
+				</a>
+				<p>welcome-page</p>
+				<ul>
+					<li>the landing page on the main route (/)</li>
+					<li>gives users the opportunity to navigate to either login or registration</li>
+				</ul>
+				login-view
+				<ul>
+					<li>Allows users to log in with a username and password</li>
+				</ul>
+				registration-view
+				<ul>
+					<li>Allows new users to register (username, password, email, birthday)</li>
+				</ul>
+				navbar
+				<ul>
+					<li>Logout a user</li>
+					<li>Return to home screen</li>
+					<li>Go to favorite movies</li>
+					<li>Go to user profile</li>
+				</ul>
+				movie-card
+				<ul>
+					<li>Returns a list of ALL movies to the user (each listed item with an image, title, and description)</li>
+					<li>Ability to select a movie for more details</li>
+					<li>Allows users to add a movie to their list of favorites</li>
+				</ul>
+				favorites
+				<ul>
+					<ul>Allows users to have a look at their favorite movies</li>
+						<li>Allows users to remove a movie from their list of favorites</li>
+					</ul>
+					profile-view
+					<ul>
+						<li>Allows users to view their profile information</li>
+						<li>Provides a link to the profile-edit</li>
+					</ul>
+					profile-edit
+					<ul>
+						<li>Allows users to update their user info (username, password, email, date of birth)</li>
+						<li>Allows existing users to deregister</li>
+					</ul>
+					genre-view
+					<ul>
+						<li>Returns data about a genre, with a name and description</li>
+					</ul>
+					director-view
+					<ul>
+						<li>Returns data about a director (name, bio, birth year, death year)</li>
+					</ul>
+					<a href="#contact-me" id="contact-me" style="color: inherit; text-decoration: none;">
+						<h3>Contact me!</h3>
+					</a>
+					<p>Get in touch! Contact me <a href="https://linkedin.com/in/daniel-von-boros-92878a186">here</a> to talk about collaborations.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/app_routing_module.html">app-<wbr>routing.module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/app_component.html">app.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/app_module.html">app.module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/director_card_director_card_component.html">director-<wbr>card/director-<wbr>card.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/favorites_favorites_component.html">favorites/favorites.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/fetch_api_data_service.html">fetch-<wbr>api-<wbr>data.service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/genre_card_genre_card_component.html">genre-<wbr>card/genre-<wbr>card.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/movie_card_movie_card_component.html">movie-<wbr>card/movie-<wbr>card.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/navbar_navbar_component.html">navbar/navbar.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/profile_edit_profile_edit_component.html">profile-<wbr>edit/profile-<wbr>edit.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/profile_view_profile_view_component.html">profile-<wbr>view/profile-<wbr>view.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/synopsis_card_synopsis_card_component.html">synopsis-<wbr>card/synopsis-<wbr>card.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/user_login_form_user_login_form_component.html">user-<wbr>login-<wbr>form/user-<wbr>login-<wbr>form.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/user_registration_form_user_registration_form_component.html">user-<wbr>registration-<wbr>form/user-<wbr>registration-<wbr>form.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/welcome_page_welcome_page_component.html">welcome-<wbr>page/welcome-<wbr>page.component</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

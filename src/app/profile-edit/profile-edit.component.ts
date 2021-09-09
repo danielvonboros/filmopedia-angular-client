@@ -15,6 +15,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProfileEditComponent implements OnInit {
 
+  /**
+   * Required fields for the update user form
+   */
   @Input() userData = { 
     username: '', 
     password: '', 
@@ -30,7 +33,9 @@ export class ProfileEditComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // function responsible for sending form inputs to backend
+  /**
+   * update user details
+   */
   editProfile(): void {
     this.fetchApiData.editUserProfile(this.userData).subscribe((res) => {
       // Logic for successful user registration needs to be implemented here!

@@ -29,10 +29,16 @@ export class ProfileViewComponent implements OnInit {
     public router: Router,
   ) { }
 
+  /**
+   * When opening the component, gets the user
+   */
   ngOnInit(): void {
     this.getUser();
   }
 
+  /**
+   * gets user details from backend
+   */
   getUser(): void {
     let user = localStorage.getItem('username');
     this.fetchApiData.getUser(user).subscribe((res: any) => {
@@ -40,6 +46,9 @@ export class ProfileViewComponent implements OnInit {
     });
   }
 
+  /**
+   * opens a modal to edit the profile
+   */
   openEditProfileDialog(): void{
     this.dialog.open(ProfileEditComponent, {
       width: '500px'

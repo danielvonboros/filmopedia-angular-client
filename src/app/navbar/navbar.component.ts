@@ -28,20 +28,33 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * opens modal with user details
+   */
   openUserProfile(): void {
     this.dialog.open(ProfileViewComponent, {
       width: '500px'
     } );
   }
 
+  /**
+   * navigates to "all movies"
+   */
   openAllMovies(): void {
     this.router.navigate(['movies']);
   }
 
+  /**
+   * navigates to "favoritemovies"
+   */
   openFavorites(): void {
     this.router.navigate(['favorites'])
   }
 
+  /**
+   * logs out the user by clearing the localstorage (username, token) and reloads the page
+   * then -> redirect to welcome page
+   */
   logOut(): void {
     this.router.navigate(['welcome']);
     this.snackBar.open('Logout successful!', 'OK', {

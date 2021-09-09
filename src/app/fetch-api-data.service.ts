@@ -24,7 +24,11 @@ export class FetchDataApiService {
   constructor(private http:HttpClient, private router:Router) {}
 
 
-  // User Registration (public service)
+  /**
+   * Registration to the API
+   * @param userDetails  
+   * @returns status message: success/error
+   */
   public userRegistration(userDetails:any): Observable<any> {
     console.log(userDetails);
     return this.http.post
@@ -34,8 +38,11 @@ export class FetchDataApiService {
     );
   }
   
-
-// User Login (public service)
+/**
+ * Login to the Application
+ * @param userDetails 
+ * @returns status message: success/error
+ */
   public userLogin(userDetails: any): Observable<any> {
   console.log(userDetails);
   return this.http.post(apiUrl + 'login', userDetails)
@@ -45,7 +52,10 @@ export class FetchDataApiService {
   }
 
 
-// Get All Movies (private service)
+/**
+ * Get all movies method
+ * @returns array of movies
+ */
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {headers: new HttpHeaders(
@@ -57,7 +67,11 @@ export class FetchDataApiService {
       )
   }
 
-// Get a single movie by Id (private service)
+/**
+ * Get one particular movie
+ * Method handled by website, movie cards contain data
+ * @returns Object - data about a single movie
+ */
   getMovie(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/id/:movieId', {headers: new HttpHeaders(
@@ -71,7 +85,10 @@ export class FetchDataApiService {
   }
  
 
-// Get a director by name (private service)
+/**
+ * Get a director
+ * @returns Object - data about the director of a movie
+ */
   getDirector(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/director/:name', {headers: new HttpHeaders(
@@ -85,7 +102,10 @@ export class FetchDataApiService {
   }
   
 
-// Get a genre by name (private service)
+/**
+ * Get a genre
+ * @returns Object - data about genre of a movie
+ */
   getGenre(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/genre/:name', {headers: new HttpHeaders(
@@ -99,7 +119,11 @@ export class FetchDataApiService {
   }
   
 
-// Get a User by username (private service)
+/**
+ * Get one user by username
+ * @param username 
+ * @returns Object - data about a user
+ */
   getUser(username:any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + `users/${username}`, {headers: new HttpHeaders(
@@ -113,7 +137,10 @@ export class FetchDataApiService {
   }
 
 
-  // Get the favoritemovies-array of a user (private service)
+  /**
+   * @param username (Injected automatically, username extracted from login params)
+   * @returns Array - favoritemovies of a user
+   */
   getFavoriteMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
@@ -129,7 +156,11 @@ export class FetchDataApiService {
   }
 
 
-  // Add a movie to the favoritemovies-array (private service)
+  /**
+   * 
+   * @param id, username (Injected automatically, username extracted from login params)
+   * @returns status message: success/error
+   */
   addToFavoriteMovies(id:string): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username')
@@ -145,7 +176,11 @@ export class FetchDataApiService {
   } 
 
 
-  // Edit user profile (private service)
+  /**
+   * Update user information
+   * @param userData, username (Injected automatically, username extracted from login params)
+   * @returns status message: success/error
+   */
   editUserProfile(userData:any): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
@@ -161,7 +196,11 @@ export class FetchDataApiService {
   }
   
 
-  //Delete user profile (private service)
+  /**
+   * Delete user account
+   * @params username (Injected automatically, username extracted from login params)
+   * @returns status message
+   */
     deleteUserProfile(): Observable<any> {
       const token = localStorage.getItem('token');
       const username = localStorage.getItem('username');

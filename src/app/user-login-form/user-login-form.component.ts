@@ -17,6 +17,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserLoginFormComponent implements OnInit {
 
+  /**
+   * Required fields for the login form
+   */
   @Input() userData= { username: '', password: '' }
 
   constructor(
@@ -28,7 +31,12 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // function for sending the form inputs to the backend
+  /**
+   * Sends a login request, if successful,
+   * - saves username to local storage (for future requests)
+   * - saves token to local storage (for future requests)
+   * - redirects to the '/movies' endpoint
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       localStorage.setItem('username', response.user.username);

@@ -35,6 +35,9 @@ export class FavoritesComponent implements OnInit {
     public snackBar: MatSnackBar,
   ) { }
 
+  /**
+   * gets movies and favoritemovies when initialized
+   */  
   ngOnInit(): void {
     this.getMovies();
     this.getUsersFavs();
@@ -44,8 +47,12 @@ export class FavoritesComponent implements OnInit {
   * this component gets all movies from the server and compares the users favorites (favs) with the movie array.
   * the movies from the user favorites will then be pushed to a new array (favorites).
   * The favorites-View is a not dependend on the movieCard view
+  * but movies can only be added to the favorite movies array from the movie-card component
   */
 
+  /**
+   * gets all movies
+   */
   getMovies(): void {
     // this.isLoading: true
     this.fetchApiData.getAllMovies().subscribe((resp:any) => {
@@ -56,6 +63,9 @@ export class FavoritesComponent implements OnInit {
     })
   }
 
+  /**
+   * gets the users favorite movies
+   */
   getUsersFavs(): void {
     this.fetchApiData.getUser(user).subscribe((resp:any) => {
       this.favs = resp.favoritemovies;
@@ -64,6 +74,10 @@ export class FavoritesComponent implements OnInit {
     })
   }
 
+  /**
+   * movies are filtered if part of favoritemovies array
+   * @returns array of movies to be displayed in this component
+   */
   filterFavorites(): void {
     this.movies.forEach((movie:any) => {
       if (this.favs.includes(movie._id)) {
@@ -73,6 +87,12 @@ export class FavoritesComponent implements OnInit {
     return this.favorites;
   }
 
+  /**
+   * adds the movie to the users favoritemovies array
+   * @param id (movie._id - unique identifier)
+   * @param title (movie title)
+   * @returns a status message - success/error
+   */
   addToUserFavorites(id:string, title:string): void {
     this.fetchApiData.addToFavoriteMovies(id).subscribe((resp: any) => {
       this.snackBar.open(`${title} has been added to your favorites.`, 'OK', {
@@ -82,6 +102,12 @@ export class FavoritesComponent implements OnInit {
     })
   }
 
+  /**
+   * removes the movie from users favoritemovies array
+   * @param id (movie._id - unique identifier)
+   * @param title (movie title)
+   * @returns a status message - success/error
+   */
   removeFromUserFavorites(id:string, title:string): void {
     this.fetchApiData.removeFromFavoriteMovies(id).subscribe((resp: any) => {
       this.snackBar.open(`${title} has been removed from your favorites.`, 'OK', {
@@ -93,6 +119,11 @@ export class FavoritesComponent implements OnInit {
     return this.getUsersFavs();
   }
 
+  /**
+   * opens genre modal with infos about genre
+   * @param name (genre name)
+   * @param description (genre description)
+   */
   openGenre(name:string, description:string): void {
     this.dialog.open(GenreCardComponent, {
       data: {name, description},
@@ -100,6 +131,13 @@ export class FavoritesComponent implements OnInit {
     });
   }
 
+  /**
+   * opens director modal with infos about director
+   * @param name (director name)
+   * @param bio (director bio)
+   * @param birthYear (director birthYear)
+   * @param deathYear (director deathYear)
+   */
   openDirector(name:string, bio:string, birthYear:number, deathYear:number): void {
     this.dialog.open(DirectorCardComponent, {
       data: {name, bio, birthYear, deathYear},
@@ -107,6 +145,13 @@ export class FavoritesComponent implements OnInit {
     });
   }
 
+  /**
+   * opens synopsis modal with infos about movie
+   * @param title (movie title)
+   * @param imageUrl (movie image/cover)
+   * @param description (movie description)
+   * @param year (year of release)
+   */
   openSynopsis(title:string, imageUrl:any, description:string, year:number): void {
     this.dialog.open(SynopsisCardComponent, {
       data: {title, imageUrl, description, year},
@@ -114,6 +159,11 @@ export class FavoritesComponent implements OnInit {
     });
   }
 
+  /**
+   * Compares movie id's with getUsersFavs returned list to display the favorite movie icon (heart) correctly
+   * @param id 
+   * @returns 
+   */
   setFavStatus(id: any): any {
     if (this.favs.includes(id)) {
       return true;

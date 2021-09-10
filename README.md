@@ -1,4 +1,4 @@
-![alt filmOpediaAngularLogo](https://github.com/danielvonboros/filmopedia-angular-client/blob/master/src/assets/filmOpediaAngularLogo.png?raw=true)
+![alt filmOpediaAngularLogo](https://github.com/danielvonboros/filmopedia-angular-client/blob/master/src/assets/filmopediaAngularLogo.png?raw=true)
 
 <p>The Angular client to: Not just another internet movie database</p>
 

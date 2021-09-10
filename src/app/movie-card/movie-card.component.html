@@ -1,14 +1,19 @@
 <app-navbar></app-navbar>
-<div style="display: flex;">
+<div class="movie-container" >
     
     <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
         <mat-card-header>
             <mat-card-title>{{movie.title}}</mat-card-title>
+            <mat-icon *ngIf="!setFavStatus(movie._id)" (click)="addToUserFavorites(movie._id, movie.title)" class="favorite-button">favorite_border</mat-icon>
+            <mat-icon *ngIf="setFavStatus(movie._id)" (click)="removeFromUserFavorites(movie._id, movie.title)" class="favorite-button-active">favorite</mat-icon>
             <mat-card-subtitle>Directed by: {{movie.director.name}}</mat-card-subtitle>
         </mat-card-header>
-            <img src={{movie.imageUrl}} alt={{movie.title}}>
+        <mat-card-content>
+            <img class="movie-img" src={{movie.imageUrl}} alt={{movie.title}}>
+        </mat-card-content>
         <mat-card-actions>
             <button
+            class='button-link'
                 mat-button
                 color='primary'
                 (click)='openGenre(movie.genre.name, movie.genre.description)'
@@ -16,6 +21,7 @@
             Genre
             </button>
             <button
+                class='button-link'
                 mat-button
                 color='primary'
                 (click)='openDirector(movie.director.name, movie.director.bio, movie.director.birthYear, movie.director.deathYear)'
@@ -23,14 +29,14 @@
             Director
             </button>
             <button
+            class='button-link'
                 mat-button
                 color='primary'
                 (click)='openSynopsis(movie.title, movie.imageUrl, movie.description, movie.year)'
             >
             Synopsis
             </button>
-            <mat-icon *ngIf="!setFavStatus(movie._id)" (click)="addToUserFavorites(movie._id, movie.title)" class="favorite-button">favorite_border</mat-icon>
-            <mat-icon *ngIf="setFavStatus(movie._id)" (click)="removeFromUserFavorites(movie._id, movie.title)" class="favorite-button-active">favorite</mat-icon>
+            
         </mat-card-actions>
     </mat-card>
 </div>

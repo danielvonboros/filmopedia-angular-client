@@ -1,4 +1,22 @@
+@font-face {
+  font-family: "Ubuntu-Light";
+  src: local("Ubuntu-Light"),
+    url(./assets/fonts/Ubuntu-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src: local("Ubuntu-Medium"),
+    url(./assets/fonts/Ubuntu-Medium.ttf) format("truetype");
+}
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  font-family: "Ubuntu-Light";
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,22 @@
+* {
+  font-family: "Ubuntu-Medium", Roboto;
+}
+
+.main-page {
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 25vh auto;
+}
+
+.card-content {
+  margin: 16px;
+}
+
+.navigation-button {
+  margin: 0 auto;
+  margin-top: 1vh;
+  min-width: 300px;
+  max-width: 350px;
+}

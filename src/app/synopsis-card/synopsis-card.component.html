@@ -3,8 +3,8 @@
         <mat-card-subtitle>Synopsis</mat-card-subtitle>
         <mat-card-title>{{data.title}}</mat-card-title>
     </mat-card-header>
-    <mat-card-content>
-        <img src={{data.imageUrl}} />
+    <mat-card-content class="card-content">
+        <div class="movie-img-container"><img class="movie-img" src={{data.imageUrl}} /></div>
         <p> </p>
         <p>"{{data.description}}"</p>
         <p>{{data.year}}</p>

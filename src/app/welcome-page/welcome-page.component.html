@@ -1,17 +1,21 @@
 
 <div class='main-page'>
     <h1>
-      Welcome to filmOpedia!
+      Welcome to
     </h1>
+    <img class="welcome-page-logo" src="./assets/filmopediaAngularLogo.png" alt="filmOpedia">
+
+    <h4>Not just another internet movie database</h4>
     <button
-      mat-raised-button
+    class="navigation-button"
+      mat-stroked-button
       (click)='openUserRegistrationDialog()'
-      style='margin-right: 10px'
       color='primary'
     >
     Sign up
     </button>
     <button
+    class="navigation-button"
       mat-raised-button
       (click)='openUserLoginDialog()'
       color='primary'

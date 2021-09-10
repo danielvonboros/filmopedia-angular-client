@@ -1,0 +1,15 @@
+* {
+  font-family: "Ubuntu-Light", Roboto;
+}
+
+.mat-card-title {
+  font-family: "Ubuntu-Medium", Roboto;
+}
+
+.mat-form-field {
+  width: 400px;
+}
+
+.card-content {
+  margin: 16px;
+}
